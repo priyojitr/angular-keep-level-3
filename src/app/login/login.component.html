@@ -1,0 +1,27 @@
+<!-- reactive form using material design -->
+<mat-card class="login-c-card">
+    <mat-card-title>Login</mat-card-title>
+    <div class="login-c-form">
+        <br>
+        <div *ngIf="submitMessage" class="error-message">{{ submitMessage }}</div>
+        <br>
+        <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+            <mat-form-field class="login-c-form-field-wrapper">
+                <input matInput type="text" id="username" placeholder="Username" name="username"
+                    formControlName="username" class="username">
+                <mat-error>{{ getUsernameBlankMessage() }}</mat-error>
+            </mat-form-field>
+            <br><br>
+            <mat-form-field class="login-c-form-field-wrapper">
+                <input matInput type="password" id="password" placeholder="Password" name="password"
+                    formControlName="password" class="password">
+                <mat-error>{{ getPasswordBlankMessage() }}</mat-error>
+                <mat-error>{{ getPasswordMinLenMessage() }}</mat-error>
+            </mat-form-field>
+            <br><br>
+            <div class="login-c-done-btn-wrapper">
+                <button mat-button type="submit" [disabled]="!loginForm.valid">Submit</button>
+            </div>
+        </form>
+    </div>
+</mat-card>
