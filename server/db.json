@@ -23,6 +23,24 @@
       "text": "this is a new note using note taker",
       "state": "not-started",
       "id": 4
+    },
+    {
+      "title": "editnote",
+      "text": "editing note reflecting",
+      "state": "not-started",
+      "id": 5
+    },
+    {
+      "title": "edit#2",
+      "text": "note using subject",
+      "state": "not-started",
+      "id": 6
+    },
+    {
+      "title": "add note #3",
+      "text": "added new note after css alter",
+      "state": "not-started",
+      "id": 7
     }
   ]
 }

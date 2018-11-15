@@ -20,7 +20,7 @@ export class NoteViewComponent implements OnInit {
     // get all notes
     this._notesService.getNotes().subscribe(
       data => this.notes = data,
-      err => this.errMessage = err.error.message
+      err => this.errMessage = err.message
     );
   }
 }

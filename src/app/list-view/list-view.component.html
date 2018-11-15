@@ -1,3 +1,6 @@
+<!-- error message -->
+<label class="error-message">{{ errMessage }}</label>
+
 <div class="keep-c-list-container">
 	<label>Not-Started</label>
 	
@@ -12,4 +15,9 @@
 	<label>Completed</label>
 
 	<!-- Populate completedNotes -->
+</div>
+
+<div class="keep-c-list-container-view">
+	<!-- including the notes -->
+	<app-note [note]="note" *ngFor="let note of notes"></app-note>
 </div>

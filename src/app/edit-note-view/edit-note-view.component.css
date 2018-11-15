@@ -1,0 +1,10 @@
+.edit-note-c-form {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+.edit-note-c-done-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}

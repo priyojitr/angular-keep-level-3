@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from '../services/authentication.service';
 import { RouterService } from '../services/router.service';
+import { error } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-login',
@@ -51,19 +52,19 @@ export class LoginComponent {
     }
 
     loginSubmit() {
-      this._authService.authenticateUser(this.loginForm.value).subscribe(
-        res => {
-          this.bearerToken = res['token'];
-          this._authService.setBearerToken(this.bearerToken);
-          this._routerService.routeToDashboard();
-        },
-        err => {
-          if (err.status !== 0) {
-            this.submitMessage = err.error.message;
-          } else {
-            this.submitMessage = err.statusText;
-          }
-        }
-      );
+      console.log('user');
+      if (this.username.length === 0 || this.password.length === 0) {
+        this.submitMessage = 'must supply value for username & password field';
+        return false;
+      } else {
+        this._authService.authenticateUser(this.loginForm.value).subscribe(
+          res => {
+            this.bearerToken = res['token'];
+            this._authService.setBearerToken(this.bearerToken);
+            this._routerService.routeToDashboard();
+          },
+          err => this.submitMessage = err.message
+        );
+      }
     }
 }

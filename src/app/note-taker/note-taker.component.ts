@@ -10,20 +10,22 @@ import { NotesService } from '../services/notes.service';
 export class NoteTakerComponent {
 
   note: Note;
+  errMessage: string;
 
   constructor(private _noteService: NotesService) {
     this.note = new Note();
+    this.errMessage = '';
   }
 
   // note taker event
   takeNote() {
-    this._noteService.addNote(this.note).subscribe(
-      data => {
-        this.note = new Note();
-       },
-      err => {
-        console.log('takeNote-error', err);
-      }
-    );
+    if (this.note.title.length === 0 || this.note.text.length === 0) {
+      this.errMessage = 'Title and Text both are required fields';
+    } else {
+      this._noteService.addNote(this.note).subscribe(
+        data => this.note = new Note(),
+        err => this.errMessage = err.message
+      );
+    }
   }
 }

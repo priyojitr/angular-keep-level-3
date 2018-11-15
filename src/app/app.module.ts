@@ -12,8 +12,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-// angular material for modal popup
-import { MatDialog, MatDialogRef, MatDialogModule } from '@angular/material';
+
+// angular material for modal popup (dialog)
+import { MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 
 // custom app component
 import { AppComponent } from './app.component';
@@ -24,6 +25,8 @@ import { NoteTakerComponent } from './note-taker/note-taker.component';
 import { NoteViewComponent } from './note-view/note-view.component';
 import { ListViewComponent } from './list-view/list-view.component';
 import { NoteComponent } from './note/note.component';
+import { EditNoteOpenerComponent } from './edit-note-opener/edit-note-opener.component';
+import { EditNoteViewComponent } from './edit-note-view/edit-note-view.component';
 
 // custom app services
 import { NotesService } from './services/notes.service';
@@ -61,6 +64,11 @@ const appRoute: Routes = [
       {
         path: 'view/listView',
         component: ListViewComponent
+      },
+      {
+        path: 'note/:noteId/edit',
+        component: EditNoteOpenerComponent,
+        outlet: 'noteEditOutlet'
       }
     ]
   }
@@ -75,7 +83,9 @@ const appRoute: Routes = [
     NoteTakerComponent,
     NoteViewComponent,
     ListViewComponent,
-    NoteComponent
+    NoteComponent,
+    EditNoteOpenerComponent,
+    EditNoteViewComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +109,7 @@ const appRoute: Routes = [
     CanActivateRouteGuard
   ],
   bootstrap: [ AppComponent ],
-  entryComponents: [ ]
+  entryComponents: [ EditNoteViewComponent ]
 })
 
 export class AppModule { }

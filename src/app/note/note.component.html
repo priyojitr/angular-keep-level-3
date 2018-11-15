@@ -1,12 +1,8 @@
-<div class="keep-c-note-container">
+<div class="keep-c-note-container" (click)="openNoteEditView()">
     <mat-card class="note">
         <mat-card-header>
-            <mat-card-title>
-                {{note.title}}
-            </mat-card-title>
+            <mat-card-title>{{note.title}}</mat-card-title>
         </mat-card-header>
-        <mat-card-content>
-            {{note.text}}
-        </mat-card-content>
+        <mat-card-content>{{note.text}}</mat-card-content>
     </mat-card>
 </div>
