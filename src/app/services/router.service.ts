@@ -32,10 +32,10 @@ export class RouterService {
   }
 
   routeToNoteView() {
-    this._router.navigate(['dashboard/view/notesView']);
+    this._router.navigate(['dashboard/view/noteview']);
   }
 
   routeToListView() {
-    this._router.navigate(['dashboard/view/listView']);
+    this._router.navigate(['dashboard/view/listview']);
   }
 }

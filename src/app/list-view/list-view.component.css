@@ -1,11 +1,12 @@
-/* .keep-c-list-container {
+.keep-c-list-container {
     display: flex;
-    margin-top: auto;
+    margin: auto;
     flex-direction: column;
-} */
+}
 
-.keep-c-list-container-view {
+/* .keep-c-list-container-view {
     display: flex;
     flex-direction: column;
     margin: auto;
-}
+    margin-left: 30px;
+} */

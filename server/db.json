@@ -27,7 +27,7 @@
     {
       "title": "editnote",
       "text": "editing note reflecting",
-      "state": "not-started",
+      "state": "completed",
       "id": 5
     },
     {
@@ -39,7 +39,7 @@
     {
       "title": "add note #3",
       "text": "added new note after css alter",
-      "state": "not-started",
+      "state": "started",
       "id": 7
     }
   ]

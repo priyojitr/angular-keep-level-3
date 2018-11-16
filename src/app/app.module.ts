@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
 
 // angular material for modal popup (dialog)
 import { MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
@@ -35,6 +36,7 @@ import { RouterService } from './services/router.service';
 
 // importing the gaurd
 import { CanActivateRouteGuard } from './can-activate-route.guard';
+// import { NotstartedPipe } from './list-view/notstarted.pipe';
 
 // app routes
 const appRoute: Routes = [
@@ -53,16 +55,16 @@ const appRoute: Routes = [
     canActivate: [CanActivateRouteGuard],
     children: [
       {
-        path: 'view/notesView',
+        path: 'view/noteview',
         component: NoteViewComponent
       },
       {
         path: '',
-        redirectTo: 'view/notesView',
+        redirectTo: 'view/noteview',
         pathMatch: 'full'
       },
       {
-        path: 'view/listView',
+        path: 'view/listview',
         component: ListViewComponent
       },
       {
@@ -86,6 +88,7 @@ const appRoute: Routes = [
     NoteComponent,
     EditNoteOpenerComponent,
     EditNoteViewComponent
+    // NotstartedPipe
   ],
   imports: [
     BrowserModule,
@@ -100,7 +103,8 @@ const appRoute: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoute),
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [
     NotesService,

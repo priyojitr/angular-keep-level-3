@@ -26,9 +26,13 @@ export class EditNoteViewComponent implements OnInit {
   }
 
   editNote() {
-    this._notesService.editNote(this.note).subscribe(
-      editNote => this._dialogRef.close(),
-      err => this.errMessage = err.message
-    );
+    if (this.note.title.length === 0 || this.note.text.length === 0) {
+      this.errMessage = 'Title and Text both are required fields';
+    } else {
+      this._notesService.editNote(this.note).subscribe(
+        editNote => this._dialogRef.close(),
+        err => this.errMessage = err.message
+      );
+    }
   }
 }
