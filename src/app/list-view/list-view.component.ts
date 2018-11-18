@@ -26,7 +26,7 @@ export class ListViewComponent implements OnInit {
     // get all notes
     this._notesService.getNotes().subscribe(
       data => this.notes = data,
-      err => this.errMessage = err.error.message
+      err => this.errMessage = err.message
     );
     // apply array filter based on note status
     this.notStartedNotes = this.notes.filter(note => note.state === 'not-started');
