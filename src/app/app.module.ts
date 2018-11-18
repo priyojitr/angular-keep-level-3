@@ -36,7 +36,6 @@ import { RouterService } from './services/router.service';
 
 // importing the gaurd
 import { CanActivateRouteGuard } from './can-activate-route.guard';
-// import { NotstartedPipe } from './list-view/notstarted.pipe';
 
 // app routes
 const appRoute: Routes = [
@@ -88,7 +87,6 @@ const appRoute: Routes = [
     NoteComponent,
     EditNoteOpenerComponent,
     EditNoteViewComponent
-    // NotstartedPipe
   ],
   imports: [
     BrowserModule,

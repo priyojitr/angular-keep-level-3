@@ -5,7 +5,6 @@
 	<label>Not-Started</label>
 	<!-- get all notes with state as not-started -->
 	<app-note [note]="note" *ngFor="let note of notStartedNotes"></app-note>
-	<!-- <app-note [note]="note" *ngFor="let note of notes | notstarted : 'not-started'"></app-note> -->
 	<!-- Populate notStartedNotes -->
 </div>
 <div class="keep-c-list-container">
@@ -20,8 +19,3 @@
 	<app-note [note]="note" *ngFor="let note of completedNotes"></app-note>
 	<!-- Populate completedNotes -->
 </div>
-
-<!--<div class="keep-c-list-container-view">
-	
-	<app-note [note]="note" *ngFor="let note of notes"></app-note>
-</div>-->
