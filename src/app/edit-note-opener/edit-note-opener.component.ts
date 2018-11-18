@@ -17,7 +17,6 @@ export class EditNoteOpenerComponent implements OnInit  {
   constructor(private _dialog: MatDialog,
     private routerService: RouterService,
     private activatedRoute: ActivatedRoute) {
-    // this._dialog.open(EditNoteViewComponent);
     // read the data of selected note
       const editNoteId = +this.activatedRoute.snapshot.paramMap.get('noteId');
       this._dialog.open(EditNoteViewComponent, {

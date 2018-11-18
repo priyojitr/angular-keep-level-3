@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from '../services/authentication.service';
 import { RouterService } from '../services/router.service';
-import { error } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-login',
